@@ -68,3 +68,63 @@ function App() {
 }
 
 export default App;
+
+
+
+//
+
+my code
+app.js//
+import { handleSubmit, register } from 'react-hook-form'
+import { FormRegister } from './form-teste'
+
+const { register, handleSubmit } = useForm();
+const {nome, setNome} = useState('');
+
+
+const App = () => {
+    return(
+
+        <>
+        <FormRegister value={nome} onChange={(e) => setNome = e.target.value} />
+        </>
+
+    )
+}
+end of app.js//
+
+//form.js
+
+import { useForm } from 'react-hook-form'
+import { InputMask } from 'react-input-mask' 
+import { useState } from 'react'
+
+
+const FormRegister = ( {value, onChange} ) => {
+
+        const onSubmit = (e) => {
+            alert(JSON.stringify(e))
+        };
+        
+
+    return(
+        <>
+        <form onSubmit={handleSubmit(onSubmit)}>
+
+            <InputMask
+            mask='999.999.999-99'
+            type={props.type}
+            placeholder={props.placeholder}
+            value={value}
+            onChange={onChange} />
+
+            <input type='submit' />
+            
+        </form>
+        </>
+    )
+}
+
+end of form.js//
+
+
